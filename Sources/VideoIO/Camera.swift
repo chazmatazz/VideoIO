@@ -400,7 +400,12 @@ public class Camera {
     
     internal var photoCaptureDelegateHandlers: [AnyObject] = []
     
+    
+    #if os(macOS)
+
+    #else
     @available(macOS, unavailable)
     internal var audioQueueCaptureSession: AudioQueueCaptureSession?
+    #endif
 }
 
